@@ -1,0 +1,25 @@
+spring:
+  application:
+    name: curcalc
+  datasource:
+    url: jdbc:postgresql://${DB_URL:localhost}:${DB_PORT:5435}/mydatabase
+    username: myuser
+    password: secret
+  jpa:
+    hibernate:
+      ddl-auto: update
+
+bank:
+  url: https://free.ratesdb.com/v1/
+
+springdoc:
+  api-docs:
+    enabled: true
+    path: /api-docs
+  swagger-ui:
+    enabled: true
+    config-url: /api-docs/swagger-config
+    with-credentials: true
+    urls:
+      - name: Application
+        url: http://localhost:8080/api-docs
